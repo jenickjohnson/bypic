@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+    
+        
+    #namebox{position: absolute;
+    left: 43%;
+    padding-top: 15px;
+    top:167px;}
+    #bn{position: absolute;
+    left: 43%;
+    padding-top: 15px;
+    top:220px;}
+    #cat{position: absolute;
+    left: 43%;
+    padding-top:15px;
+    top:272px;}
+    #lang{position: absolute;
+    left: 43%;
+    padding-top: 15px;
+    top:322px;}
+    #publ{position: absolute;
+    left: 43%;
+    padding-top: 15px;
+    top:373px;}
+    #button1{position:absolute;
+    top:430px;
+    left: 48%;}
+    #button2{position:absolute;
+    top:430px;
+    left: 43%;}
+        body {
+            width: 100%;
+            height: 100%;
+        }
+       
+        .hero {
+            width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            position: relative;
+        }
+    
+
+        .hero::before {
+            background-image: url(/static/img8.jpg);
+            background-size: cover;
+            content: "";
+            /* display: block; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            z-index: -2;
+            opacity: 0.9;
+        }
+        .hero::after {
+            background-color: #6d6d6d;
+            color: #fff;
+            text-shadow: #343a40 2px 2px;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+   
+               
+        .hero-title{
+            position: absolute;
+            width: 100%;
+            display: block;
+            text-align: center;
+            color: #fff;
+            text-shadow: #343a40 2px 2px;
+            
+        }
+        
+        .hero-title {
+            margin: 3% 0;
+            text-transform: uppercase;
+        }
+          
+    </style>
+    </head>
+    <body>           
+            <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                    <div class="jumbotron">
+                        </div>
+                            <h3>Books</h3><br>
+                            <h4>Add Book</h4>
+                        
+                            <ul class="nav navbar-nav">
+                                    <li><a href="http://localhost:8000/libstack/stack/"> Home</a></li>
+                                     <!-- <li><a href="#"> Category</a></li>
+                                    <li><a href="#"> Language</a></li>             -->
+                                    <li><a href="http://localhost:8000/libstack/database/"> Database </a></li>
+                                    <li><a href="http://localhost:8000/libstack/home/">Logout</a></li>
+                                </ul>
+                    
+                                
+                        </div>
+                </nav>
+            <form action="{% url 'addauthor' %}" method="POST">
+                    {% csrf_token %}
+            <div class="hero flex-center">
+                    <h1 class="hero-title">Libstack</h1>
+                    <input placeholder="Author Name" type="text" id="namebox" name="authorname"/><br>
+                    <input placeholder="Book Name " type="text" id="bn" name="bookname" /><br>
+                    <input placeholder="Category" type="text" id="cat" name="category" /><br>
+                    <input placeholder="Language" type="text" id="lang" name="language" /><br>
+                    <input placeholder="Publisher" type="text" id="publ" name="publisher" /><br>
+                    <button type="submit" id="button1" class="btn btn-primary">Add</button>
+                    <button type="button" id="button2" class="btn btn-primary" href="http://localhost:8000/libstack/books/">Back</button>
+                </div>
+            </div>
+        </nav>
+       
+       </form>
+    </body>
+    </html>
+
+    

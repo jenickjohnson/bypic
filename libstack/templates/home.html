@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+.imag{ 
+    position: absolute;
+    width: 100%;
+    }
+.centered {
+  position: absolute;
+  top:35%;
+  left: 50%;
+  color: #F65532;
+  transform: translate(-50%, -50%);}
+#mailbox{position: absolute;
+    left: 43%;
+    padding-top: 15px;
+top:413px;}
+#namebox{position: absolute;
+    left: 43%;
+    padding-top: 15px;
+top:370px;}
+#psw{position: absolute;
+    left: 43%;
+    padding-top:15px;
+    top:425px;}
+#button1{position:absolute;
+    top:473px;
+left: 45%;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+        <form action="{% url 'login' %}" method="POST" >
+                {% csrf_token %}
+            <div class="container-fluid">
+                {% load static %}
+                <img class="imag" src="{% static "private-library.jpg" %}">
+                <div class="centered"><h1 style="font-size:50px;">Login</h1>
+                <h1> Libstack</h1></div>
+                <div class="centered"><h2>Welcome to Libstack, where you can manage books.</h2><br>
+                <h3>Our database contains 4 million books, </h3><br>
+                <h2>Read. Learn. Grow.</h2>
+                <input placeholder="User Name" type="text" id="namebox" name="username" /><br>
+                <input placeholder="Password" type="password" id="psw" name="password" /><br>
+                <button type="submit" id="button1" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </form>
+</body>
+</html>
+
+
+ 
